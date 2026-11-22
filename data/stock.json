@@ -1,0 +1,42 @@
+{
+    "samosa": {
+        "price": 10,
+        "quantity": 400
+    },
+    "smoki sausage": {
+        "price": 40,
+        "quantity": 300
+    },
+    "boiled egg": {
+        "price": 30,
+        "quantity": 250
+    },
+    "mandazi": {
+        "price": 10,
+        "quantity": 500
+    },
+    "chapati": {
+        "price": 20,
+        "quantity": 350
+    },
+    "smocha": {
+        "price": 60,
+        "quantity": 250
+    },
+    "tea": {
+        "price": 20,
+        "quantity": 400
+    },
+    "soda": {
+        "price": 80,
+        "quantity": 300
+    },
+    "biscuits": {
+        "price": 10,
+        "quantity": 500
+    },
+    "water": {
+        "price": 50,
+        "quantity": 300
+    }
+}

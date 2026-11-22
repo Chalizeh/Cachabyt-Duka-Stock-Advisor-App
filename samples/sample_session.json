@@ -1,0 +1,85 @@
+{
+    "date": "2026-11-21T10:00:00",
+    "turn_count": 4,
+    "conversation": [
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "How many samosas are available?"
+                }
+            ]
+        },
+        {
+            "role": "model",
+            "parts": [
+                {
+                    "text": "The sample stock file shows 40 samosas. Confirm the actual count with the canteen."
+                }
+            ]
+        },
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "We sold 12 samosas. What is the remaining quantity?"
+                }
+            ]
+        },
+        {
+            "role": "model",
+            "parts": [
+                {
+                    "text": "After recording the sale in the owner menu, the sample balance would be 28 samosas."
+                }
+            ]
+        },
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "Which products are running low?"
+                }
+            ]
+        },
+        {
+            "role": "model",
+            "parts": [
+                {
+                    "text": "The low-stock warning is five units or fewer. Check the live stock display for current items."
+                }
+            ]
+        },
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "What should I restock first?"
+                }
+            ]
+        },
+        {
+            "role": "model",
+            "parts": [
+                {
+                    "text": "Prioritise products at zero or five units or fewer, then consider recent sales and expected student demand."
+                }
+            ]
+        }
+    ],
+    "summary": {
+        "session_summary": "Demonstration only: owner discussed samosa sales, low-stock monitoring and restocking.",
+        "key_activities": [
+            "Checked samosa availability",
+            "Discussed recording a sale",
+            "Reviewed low-stock alerts"
+        ],
+        "restock_priorities": [
+            "Use the live stock screen to identify items at or below five units."
+        ],
+        "follow_up": [
+            "Replace this sample with a session generated during your own test."
+        ]
+    },
+    "note": "Illustrative sample. Not a real canteen transaction."
+}
