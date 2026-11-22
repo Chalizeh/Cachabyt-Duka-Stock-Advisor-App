@@ -40,10 +40,8 @@ SESSION_FOLDER.mkdir(exist_ok=True)
 
 
 # ---------------------------------------------------------
-# 2. CANTEEN MENU AND STARTER STOCK
-# Prices are taken from the Mahanaim menu photo and additions.
-# Starting quantities are DEMO quantities. Edit them to match
-# the real canteen stock before using the app.
+# 2. CACHABYT_MAHANAIM CANTEEN MENU AND STARTER STOCK
+# Prices have been tailor made from the Mahanaim canteen menu price list.
 # ---------------------------------------------------------
 
 STARTER_STOCK = {
@@ -164,12 +162,12 @@ orders = load_json(ORDERS_FILE, [])
 
 # ---------------------------------------------------------
 # 5. BASIC STOCK FUNCTIONS
-# These calculations happen locally in Python, not through AI.
+# These calculations happen locally in Python.
 # ---------------------------------------------------------
 
 def show_stock():
     """Display every product, its price and available quantity."""
-    print("\n--------- CACHABYT MAHANAIM CANTEEN STOCK ---------")
+    print("\n--------- CACHABYT STOCK ADVISOR ---------")
     print(f"{'PRODUCT':20} {'PRICE (KSH)':12} {'AVAILABLE':10} STATUS")
     for item, details in stock.items():
         quantity = details["quantity"]
@@ -374,7 +372,7 @@ def update_order_status(order_id, new_status):
     if order.get("payment_status") != "Verified":
         return "Payment must be verified before collection."
     allowed = {"Confirmed": "Ready for collection",
-               "Ready for collection": "Collected"}
+               "Confirmed": "Collected/Delivered"}
     if allowed.get(order["status"]) != new_status:
         return f"Cannot change order from {order['status']} to {new_status}."
     order["status"] = new_status
