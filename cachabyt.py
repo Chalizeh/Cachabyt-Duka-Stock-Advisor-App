@@ -40,10 +40,8 @@ SESSION_FOLDER.mkdir(exist_ok=True)
 
 
 # ---------------------------------------------------------
-# 2. CANTEEN MENU AND STARTER STOCK
-# Prices are taken from the Mahanaim menu photo and additions.
-# Starting quantities are DEMO quantities. Edit them to match
-# the real canteen stock before using the app.
+# 2. CACHABYT_MAHANAIM CANTEEN MENU AND STARTER STOCK
+# Prices have been tailor made from the Mahanaim canteen menu price list.
 # ---------------------------------------------------------
 
 STARTER_STOCK = {
@@ -164,12 +162,12 @@ orders = load_json(ORDERS_FILE, [])
 
 # ---------------------------------------------------------
 # 5. BASIC STOCK FUNCTIONS
-# These calculations happen locally in Python, not through AI.
+# These calculations happen locally in Python.
 # ---------------------------------------------------------
 
 def show_stock():
     """Display every product, its price and available quantity."""
-    print("\n--------- CACHABYT MAHANAIM CANTEEN STOCK ---------")
+    print("\n--------- CACHABYT STOCK ADVISOR ---------")
     print(f"{'PRODUCT':20} {'PRICE (KSH)':12} {'AVAILABLE':10} STATUS")
     for item, details in stock.items():
         quantity = details["quantity"]
@@ -374,7 +372,7 @@ def update_order_status(order_id, new_status):
     if order.get("payment_status") != "Verified":
         return "Payment must be verified before collection."
     allowed = {"Confirmed": "Ready for collection",
-               "Ready for collection": "Collected"}
+               "Confirmed": "Collected/Delivered"}
     if allowed.get(order["status"]) != new_status:
         return f"Cannot change order from {order['status']} to {new_status}."
     order["status"] = new_status
@@ -429,7 +427,7 @@ def seller_update_collection():
         if choice == "1":
             print(update_order_status(order_id, "Ready for collection"))
         elif choice == "2":
-            print(update_order_status(order_id, "Collected"))
+            print(update_order_status(order_id, "Order Collected/Delivered"))
         else:
             print("Invalid choice.")
     except ValueError:
@@ -464,7 +462,7 @@ def student_order():
 
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite")
+MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
 client = None
 if API_KEY and genai:
@@ -551,6 +549,7 @@ def local_answer(user_text):
 def run_session():
     """Start a conversation and save the full session at the end."""
     print("\n Cachabyt Duka Stock Advisor session started.")
+    print("\nCachabyt Duka Stock Advisor session started.")
     print("Ask about stock, prices, sales or restocking.")
     print("Type 'end' to finish and save this session.")
 
@@ -718,21 +717,21 @@ def student_order():
 def main():
     """Display the main menu until the user chooses to exit."""
     print("\n==========================================")
-    print("       C2C DUKA STOCK ADVISOR APP")
+    print("       CACHABYT DUKA STOCK ADVISOR APP")
     print("          MAHANAIM CANTEEN")
     print("==========================================")
 
     while True:
-        print("\nMAIN MENU")
+        print("\n CACHABYT DUKA TASK DIRECTORY")
         print("1. Start AI stock-advisor conversation")
         print("2. Check current stock and prices")
-        print("3. Record a sale (owner)")
-        print("4. Add new stock (owner)")
-        print("5. Place a student advance order")
-        print("6. View student orders (owner)")
-        print("7. Verify payment and confirm order (owner)")
-        print("8. Create payment reminder for unpaid buyer (owner)")
-        print("9. Update order to ready / collected (owner)")
+        print("3. Place a student advance order")
+        print("4. View student orders (owner)")
+        print("5. Verify payment and confirm order (owner)")
+        print("6. Create payment reminder to the buyer for unpaid orders (owner)")
+        print("7. Record a sale (owner)")
+        print("8. Update order to ready / collected (owner)")
+        print("9. Add new stock (owner)")
         print("10. Cancel an unpaid order (owner)")
         print("11. View low-stock alerts")
         print("12. Open a past session")
@@ -765,7 +764,7 @@ def main():
         elif choice == "12":
             open_past_session()
         elif choice == "13":
-            print("Thank you for using C2C Duka Stock Advisor.")
+            print("Thank you for using Cachabyt Duka Stock Advisor App.")
             break
         else:
             print("Invalid choice. Please select a number from 1 to 13.")
