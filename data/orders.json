@@ -1,1 +1,71 @@
-[]
+[
+    {
+        "order_id": 1,
+        "student_name": "Charles",
+        "phone_number": "",
+        "product": "soda",
+        "quantity": 2,
+        "unit_price": 80,
+        "total": 160,
+        "payment_status": "Verified",
+        "payment_method": "M-pesa",
+        "payment_reference": "CNK1",
+        "status": "Ready for collection",
+        "created_at": "2026-11-22T11:26",
+        "reminders": [],
+        "payment_verified_at": "2026-11-22T11:30",
+        "updated_at": "2026-11-22T11:35"
+    },
+    {
+        "order_id": 2,
+        "student_name": "Caleb",
+        "phone_number": "",
+        "product": "smocha",
+        "quantity": 3,
+        "unit_price": 60,
+        "total": 180,
+        "payment_status": "Awaiting payment",
+        "payment_method": "",
+        "payment_reference": "",
+        "status": "Cancelled",
+        "created_at": "2026-11-22T11:26",
+        "reminders": [
+            {
+                "message": "Hello Caleb, this is Mahanaim Canteen. Reminder: your order #2 is awaiting payment of KSh 180. Please pay using the canteen's approved payment instructions and share the payment reference with the seller. Your order is not confirmed until payment is verified. Thank you.",
+                "created_at": "2026-11-22T11:32"
+            }
+        ]
+    },
+    {
+        "order_id": 3,
+        "student_name": "Eclare",
+        "phone_number": "",
+        "product": "boiled egg",
+        "quantity": 6,
+        "unit_price": 30,
+        "total": 180,
+        "payment_status": "Verified",
+        "payment_method": "cash",
+        "payment_reference": "EK1",
+        "status": "Confirmed",
+        "created_at": "2026-11-22T11:27",
+        "reminders": [],
+        "payment_verified_at": "2026-11-22T11:31"
+    },
+    {
+        "order_id": 4,
+        "student_name": "Charles",
+        "phone_number": "",
+        "product": "smocha",
+        "quantity": 240,
+        "unit_price": 60,
+        "total": 14400,
+        "payment_status": "Verified",
+        "payment_method": "mpesa",
+        "payment_reference": "CNK2",
+        "status": "Confirmed",
+        "created_at": "2026-11-22T11:38",
+        "reminders": [],
+        "payment_verified_at": "2026-11-22T11:39"
+    }
+]

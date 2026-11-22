@@ -9,7 +9,7 @@
     },
     "boiled egg": {
         "price": 30,
-        "quantity": 250
+        "quantity": 244
     },
     "mandazi": {
         "price": 10,
@@ -21,7 +21,7 @@
     },
     "smocha": {
         "price": 60,
-        "quantity": 250
+        "quantity": 80
     },
     "tea": {
         "price": 20,
@@ -29,7 +29,7 @@
     },
     "soda": {
         "price": 80,
-        "quantity": 300
+        "quantity": 248
     },
     "biscuits": {
         "price": 10,
