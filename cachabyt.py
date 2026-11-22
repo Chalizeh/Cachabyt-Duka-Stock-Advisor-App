@@ -427,7 +427,7 @@ def seller_update_collection():
         if choice == "1":
             print(update_order_status(order_id, "Ready for collection"))
         elif choice == "2":
-            print(update_order_status(order_id, "Collected"))
+            print(update_order_status(order_id, "Order Collected/Delivered"))
         else:
             print("Invalid choice.")
     except ValueError:
@@ -462,7 +462,7 @@ def student_order():
 
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite")
+MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
 
 client = None
 if API_KEY and genai:
