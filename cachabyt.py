@@ -763,7 +763,7 @@ def main():
         elif choice == "12":
             open_past_session()
         elif choice == "13":
-            print("Thank you for using C2C Duka Stock Advisor.")
+            print("Thank you for using Cachabyt Duka Stock Advisor App.")
             break
         else:
             print("Invalid choice. Please select a number from 1 to 13.")
