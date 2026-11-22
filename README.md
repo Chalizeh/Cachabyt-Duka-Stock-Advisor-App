@@ -1,4 +1,4 @@
-# C2C Duka Stock Advisor App
+# Cachabyt Duka Stock Advisor App
 
 **IYF WeCan Academy – Season 12 Group Project**
 
@@ -49,7 +49,7 @@ Prices come from the supplied Mahanaim Canteen menu photo and the three requeste
 
 1. Download and extract this project folder.
 2. Open VS Code.
-3. Select **File → Open Folder** and choose `C2C Duka Stock Advisor App`.
+3. Select **File → Open Folder** and choose `Cachabyt Duka Stock Advisor App`.
 4. Open **Terminal → New Terminal**.
 5. Create a virtual environment:
 

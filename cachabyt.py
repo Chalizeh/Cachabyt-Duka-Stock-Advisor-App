@@ -549,7 +549,7 @@ def local_answer(user_text):
 
 def run_session():
     """Start a conversation and save the full session at the end."""
-    print("\nC2C Duka Stock Advisor session started.")
+    print("\n Cachabyt Duka Stock Advisor session started.")
     print("Ask about stock, prices, sales or restocking.")
     print("Type 'end' to finish and save this session.")
 
@@ -595,14 +595,14 @@ def run_session():
                 "role": "model",
                 "parts": [{"text": json.dumps(ai_result)}]
             })
-            print("\nC2C Advisor:", answer)
+            print("\nCachabyt Advisor:", answer)
         else:
             answer = local_answer(user_text)
             history.append({
                 "role": "model",
                 "parts": [{"text": answer}]
             })
-            print("\nC2C Advisor (local mode):", answer)
+            print("\nCachabyt Advisor (local mode):", answer)
 
     # Make the final summary call using the whole conversation.
     summary = None

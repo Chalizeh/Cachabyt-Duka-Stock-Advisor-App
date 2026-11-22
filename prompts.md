@@ -1,4 +1,4 @@
-# C2C Duka Stock Advisor – AI Prompts
+# Cachabyt Duka Stock Advisor – AI Prompts
 
 ## System prompt (R-T-C-C-O)
 
