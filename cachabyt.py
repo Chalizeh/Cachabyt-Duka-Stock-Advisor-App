@@ -1,6 +1,6 @@
 """
 Cachabyt Duka Stock Advisor App
-This is user friendly Cachabyt canteen stock and pre-order assistant.
+This is user friendly Cachabyt canteen stock and pre-order assistant for the Mahanaim Canteen.
 
 Important:
 - Stock, prices, totals and orders are calculated by Python.
