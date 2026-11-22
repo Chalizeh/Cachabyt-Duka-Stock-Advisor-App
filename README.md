@@ -1,4 +1,4 @@
-# C2C Duka Stock Advisor App
+# Cachabyt Duka Stock Advisor App
 
 **IYF WeCan Academy – Season 12 Group Project**
 
