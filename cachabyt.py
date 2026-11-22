@@ -1,10 +1,11 @@
 """
 Cachabyt Duka Stock Advisor App
-This is user friendly Cachabyt canteen stock and pre-order assistant for the Mahanaim Canteen.
+This is a group AI project by Charles_1016, Eclare_2545 & Caleb_2528 for to assist the Manhain Canteen manage stock and sales.
+The app by extension also helps students view available stock in real time and make orders/purchase while in class rather than going to qeue awaiting
+for already otherwise depleted stocks at the shop.
 
-Important:
-- Stock, prices, totals and orders are calculated by Python.
-- Gemini only helps explain information in a conversational way.
+
+Important note:
 - If no API key is available, the local stock features still work.
 """
 
