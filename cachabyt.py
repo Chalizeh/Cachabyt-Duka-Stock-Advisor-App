@@ -548,7 +548,7 @@ def local_answer(user_text):
 
 def run_session():
     """Start a conversation and save the full session at the end."""
-    print("\nC2C Duka Stock Advisor session started.")
+    print("\nCachabyt Duka Stock Advisor session started.")
     print("Ask about stock, prices, sales or restocking.")
     print("Type 'end' to finish and save this session.")
 
@@ -594,14 +594,14 @@ def run_session():
                 "role": "model",
                 "parts": [{"text": json.dumps(ai_result)}]
             })
-            print("\nC2C Advisor:", answer)
+            print("\nCachabyt Advisor:", answer)
         else:
             answer = local_answer(user_text)
             history.append({
                 "role": "model",
                 "parts": [{"text": answer}]
             })
-            print("\nC2C Advisor (local mode):", answer)
+            print("\nCachabyt Advisor (local mode):", answer)
 
     # Make the final summary call using the whole conversation.
     summary = None
@@ -716,21 +716,21 @@ def student_order():
 def main():
     """Display the main menu until the user chooses to exit."""
     print("\n==========================================")
-    print("       C2C DUKA STOCK ADVISOR APP")
+    print("       CACHABYT DUKA STOCK ADVISOR APP")
     print("          MAHANAIM CANTEEN")
     print("==========================================")
 
     while True:
-        print("\nMAIN MENU")
+        print("\n CACHABYT DUKA TASK DIRECTORY")
         print("1. Start AI stock-advisor conversation")
         print("2. Check current stock and prices")
-        print("3. Record a sale (owner)")
-        print("4. Add new stock (owner)")
-        print("5. Place a student advance order")
-        print("6. View student orders (owner)")
-        print("7. Verify payment and confirm order (owner)")
-        print("8. Create payment reminder for unpaid buyer (owner)")
-        print("9. Update order to ready / collected (owner)")
+        print("3. Place a student advance order")
+        print("4. View student orders (owner)")
+        print("5. Verify payment and confirm order (owner)")
+        print("6. Create payment reminder to the buyer for unpaid orders (owner)")
+        print("7. Record a sale (owner)")
+        print("8. Update order to ready / collected (owner)")
+        print("9. Add new stock (owner)")
         print("10. Cancel an unpaid order (owner)")
         print("11. View low-stock alerts")
         print("12. Open a past session")
