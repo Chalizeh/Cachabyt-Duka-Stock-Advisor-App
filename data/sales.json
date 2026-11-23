@@ -1,0 +1,23 @@
+[
+    {
+        "product": "water",
+        "quantity": 3,
+        "unit_price": 50,
+        "total": 150,
+        "date": "2026-11-23T22:30"
+    },
+    {
+        "product": "tea",
+        "quantity": 4,
+        "unit_price": 20,
+        "total": 80,
+        "date": "2026-11-23 23:55:50"
+    },
+    {
+        "product": "chapati",
+        "quantity": 25,
+        "unit_price": 20,
+        "total": 500,
+        "date": "2026-11-24 01:41:42"
+    }
+]

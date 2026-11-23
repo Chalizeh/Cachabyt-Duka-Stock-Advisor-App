@@ -14,7 +14,10 @@
         "created_at": "2026-11-22T11:26",
         "reminders": [],
         "payment_verified_at": "2026-11-22T11:30",
-        "updated_at": "2026-11-22T11:35"
+        "updated_at": "2026-11-22T11:35",
+        "student": "Unknown",
+        "phone": "",
+        "payment_proof": ""
     },
     {
         "order_id": 2,
@@ -34,7 +37,10 @@
                 "message": "Hello Caleb, this is Mahanaim Canteen. Reminder: your order #2 is awaiting payment of KSh 180. Please pay using the canteen's approved payment instructions and share the payment reference with the seller. Your order is not confirmed until payment is verified. Thank you.",
                 "created_at": "2026-11-22T11:32"
             }
-        ]
+        ],
+        "student": "Unknown",
+        "phone": "",
+        "payment_proof": ""
     },
     {
         "order_id": 3,
@@ -50,7 +56,10 @@
         "status": "Confirmed",
         "created_at": "2026-11-22T11:27",
         "reminders": [],
-        "payment_verified_at": "2026-11-22T11:31"
+        "payment_verified_at": "2026-11-22T11:31",
+        "student": "Unknown",
+        "phone": "",
+        "payment_proof": ""
     },
     {
         "order_id": 4,
@@ -66,6 +75,181 @@
         "status": "Confirmed",
         "created_at": "2026-11-22T11:38",
         "reminders": [],
-        "payment_verified_at": "2026-11-22T11:39"
+        "payment_verified_at": "2026-11-22T11:39",
+        "student": "Unknown",
+        "phone": "",
+        "payment_proof": ""
+    },
+    {
+        "order_id": 5,
+        "student_name": "Nancy",
+        "phone": "0722656341",
+        "product": "water",
+        "quantity": 3,
+        "unit_price": 50,
+        "total": 150,
+        "payment_status": "Verified",
+        "payment_method": "Mpesa",
+        "payment_reference": "5",
+        "status": "Collected/Delivered",
+        "created_at": "2026-11-23T22:27",
+        "reminders": [],
+        "payment_verified_at": "2026-11-23T22:29",
+        "updated_at": "2026-11-23T23:09:45",
+        "student": "Unknown",
+        "payment_proof": ""
+    },
+    {
+        "order_id": 6,
+        "student": "Chalizeh",
+        "phone": "0708339229",
+        "product": "tea",
+        "quantity": 5,
+        "unit_price": 20,
+        "total": 100,
+        "payment_status": "Verified",
+        "payment_method": "M-Pesa Till",
+        "payment_reference": "CNK100",
+        "payment_proof": "",
+        "status": "Confirmed",
+        "created_at": "2026-11-23T23:01:40",
+        "proof_submitted_at": "2026-11-23T23:03:24",
+        "payment_verified_at": "2026-11-23 23:25:56"
+    },
+    {
+        "order_id": 7,
+        "student": "Chalizeh",
+        "phone": "0708339229",
+        "product": "smocha",
+        "quantity": 6,
+        "unit_price": 60,
+        "total": 360,
+        "payment_status": "Verified",
+        "payment_method": "M-Pesa Paybill",
+        "payment_reference": "SMCNK1",
+        "payment_proof": "",
+        "status": "Confirmed",
+        "created_at": "2026-11-23 23:21:33",
+        "proof_submitted_at": "2026-11-23 23:23:10",
+        "payment_verified_at": "2026-11-23 23:25:40"
+    },
+    {
+        "order_id": 8,
+        "customer": "Kelvin",
+        "phone": "0708339229",
+        "items": [
+            {
+                "product": "tea",
+                "quantity": 4,
+                "unit_price": 20
+            },
+            {
+                "product": "mandazi",
+                "quantity": 4,
+                "unit_price": 10
+            }
+        ],
+        "total": 120,
+        "payment_status": "Verified",
+        "payment_method": "M-Pesa Paybill",
+        "payment_reference": "HHH4L",
+        "payment_proof": "",
+        "status": "Confirmed",
+        "created_at": "2026-11-23 23:43:08",
+        "proof_submitted_at": "2026-11-23 23:57:21",
+        "payment_verified_at": "2026-11-23 23:57:51",
+        "product": "",
+        "quantity": 0,
+        "unit_price": 0
+    },
+    {
+        "order_id": 9,
+        "student": "Kamau",
+        "phone": "0708339229",
+        "items": [
+            {
+                "product": "sweets",
+                "quantity": 4,
+                "unit_price": 10.0
+            }
+        ],
+        "total": 40.0,
+        "payment_status": "Awaiting payment",
+        "payment_method": "",
+        "payment_reference": "",
+        "payment_proof": "",
+        "status": "Awaiting payment",
+        "created_at": "2026-11-24 00:22:23",
+        "payment_reminder_sent_at": "2026-11-24 00:23:23",
+        "payment_reminder_status": "Reminder generated"
+    },
+    {
+        "order_id": 10,
+        "student": "Caleb",
+        "phone": "0722334556",
+        "items": [
+            {
+                "product": "soda",
+                "quantity": 3,
+                "unit_price": 80
+            }
+        ],
+        "total": 240,
+        "payment_status": "Awaiting payment",
+        "payment_method": "",
+        "payment_reference": "",
+        "payment_proof": "",
+        "status": "Awaiting payment",
+        "created_at": "2026-11-24 01:14:18"
+    },
+    {
+        "order_id": 11,
+        "customer": "Kelvin",
+        "phone": "0708339229",
+        "items": [
+            {
+                "product": "mandazi",
+                "quantity": 3,
+                "unit_price": 10
+            },
+            {
+                "product": "tea",
+                "quantity": 6,
+                "unit_price": 20
+            }
+        ],
+        "total": 150,
+        "payment_status": "Awaiting payment",
+        "payment_method": "",
+        "payment_reference": "",
+        "payment_proof": "",
+        "status": "Awaiting payment",
+        "created_at": "2026-11-24 01:21:49"
+    },
+    {
+        "order_id": 12,
+        "customer": "Ngoch",
+        "phone": "0732545767",
+        "items": [
+            {
+                "product": "soda",
+                "quantity": 5,
+                "unit_price": 80
+            },
+            {
+                "product": "chapati",
+                "quantity": 3,
+                "unit_price": 20
+            }
+        ],
+        "total": 460,
+        "payment_status": "Verified",
+        "payment_method": "M-Pesa Till",
+        "payment_reference": "TILL123",
+        "payment_proof": "",
+        "status": "Confirmed",
+        "created_at": "2026-11-24 01:38:38",
+        "proof_submitted_at": "2026-11-24 01:39:18",
+        "payment_verified_at": "2026-11-24 01:40:51"
     }
 ]

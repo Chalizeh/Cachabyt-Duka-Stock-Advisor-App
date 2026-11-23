@@ -13,23 +13,23 @@
     },
     "mandazi": {
         "price": 10,
-        "quantity": 500
+        "quantity": 496
     },
     "chapati": {
         "price": 20,
-        "quantity": 350
+        "quantity": 322
     },
     "smocha": {
         "price": 60,
-        "quantity": 80
+        "quantity": 158
     },
     "tea": {
         "price": 20,
-        "quantity": 400
+        "quantity": 387
     },
     "soda": {
         "price": 80,
-        "quantity": 248
+        "quantity": 243
     },
     "biscuits": {
         "price": 10,
@@ -37,6 +37,10 @@
     },
     "water": {
         "price": 50,
-        "quantity": 300
+        "quantity": 304
+    },
+    "sweets": {
+        "price": 10.0,
+        "quantity": 400
     }
 }
