@@ -1,0 +1,53 @@
+{
+    "tool": "Cachabyt Duka Stock Advisor",
+    "group": "Cachabyt (Charles_1016, Eclare_2545, Caleb_2528)",
+    "date": "2026-11-24_16-42-10",
+    "turns": 4,
+    "conversation": [
+        {
+            "role": "user",
+            "content": "How much is a smocha and how many do we have left?"
+        },
+        {
+            "role": "assistant",
+            "content": "A smocha costs KSh 60 and we have 250 in stock."
+        },
+        {
+            "role": "user",
+            "content": "What about samosas?"
+        },
+        {
+            "role": "assistant",
+            "content": "A samosa costs KSh 10 and we have 400 in stock."
+        },
+        {
+            "role": "user",
+            "content": "If a student buys 2 of the item from my first question, what do they pay?"
+        },
+        {
+            "role": "assistant",
+            "content": "Using your first question: 2 smochas at KSh 60 each cost KSh 120."
+        },
+        {
+            "role": "user",
+            "content": "Which items are running low?"
+        },
+        {
+            "role": "assistant",
+            "content": "All products have sufficient stock right now. Nothing is at or below the low-stock level of 50 units."
+        }
+    ],
+    "summary": {
+        "summary": "The user asked about smocha and samosa prices and stock levels, confirmed the cost of buying two smochas, and checked which items are running low. All queried products are adequately stocked.",
+        "topics": [
+            "smocha price and stock",
+            "samosa price and stock",
+            "order costing",
+            "low stock check"
+        ],
+        "recommended_actions": [
+            "Keep monitoring stock levels against the 50-unit alert threshold",
+            "Restock promptly if any item drops to 50 units or below"
+        ]
+    }
+}

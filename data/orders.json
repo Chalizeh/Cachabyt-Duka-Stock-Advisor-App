@@ -251,5 +251,56 @@
         "created_at": "2026-11-24 01:38:38",
         "proof_submitted_at": "2026-11-24 01:39:18",
         "payment_verified_at": "2026-11-24 01:40:51"
+    },
+    {
+        "order_id": 13,
+        "customer": "eclare",
+        "phone": "0711466472",
+        "items": [
+            {
+                "product": "tea",
+                "quantity": 3,
+                "unit_price": 20
+            },
+            {
+                "product": "mandazi",
+                "quantity": 3,
+                "unit_price": 10
+            }
+        ],
+        "total": 90,
+        "payment_status": "Verification pending",
+        "payment_method": "M-Pesa Till",
+        "payment_reference": "E001",
+        "payment_proof": "",
+        "status": "Awaiting payment",
+        "created_at": "2026-11-24 22:43:25",
+        "proof_submitted_at": "2026-11-24 22:45:43"
+    },
+    {
+        "order_id": 14,
+        "customer": "Chalizeh",
+        "phone": "0708339229",
+        "items": [
+            {
+                "product": "water",
+                "quantity": 6,
+                "unit_price": 50
+            },
+            {
+                "product": "sweets",
+                "quantity": 7,
+                "unit_price": 10.0
+            }
+        ],
+        "total": 370.0,
+        "payment_status": "Verified",
+        "payment_method": "M-Pesa Paybill",
+        "payment_reference": "QWERTY",
+        "payment_proof": "",
+        "status": "Confirmed",
+        "created_at": "2026-11-25 11:05:35",
+        "proof_submitted_at": "2026-11-25 11:06:15",
+        "payment_verified_at": "2026-11-25 11:10:55"
     }
 ]

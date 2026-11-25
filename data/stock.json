@@ -37,10 +37,10 @@
     },
     "water": {
         "price": 50,
-        "quantity": 304
+        "quantity": 298
     },
     "sweets": {
         "price": 10.0,
-        "quantity": 400
+        "quantity": 393
     }
 }

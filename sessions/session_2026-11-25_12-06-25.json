@@ -1,0 +1,45 @@
+{
+    "tool": "Cachabyt Duka Stock Advisor",
+    "group": "Cachabyt (Charles_1016, Eclare_2545, Caleb_2528)",
+    "date": "2026-11-25_12-06-25",
+    "turns": 4,
+    "conversation": [
+        {
+            "role": "user",
+            "content": "what products are being bought more?"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "where is your duka located at?"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "which products are available?"
+        },
+        {
+            "role": "assistant",
+            "content": "Samosa: 400 available\nSmoki Sausage: 300 available\nBoiled Egg: 244 available\nMandazi: 496 available\nChapati: 322 available\nSmocha: 158 available\nTea: 387 available\nSoda: 243 available\nBiscuits: 500 available\nWater: 298 available\nSweets: 393 available"
+        },
+        {
+            "role": "user",
+            "content": "Which product need restocking"
+        },
+        {
+            "role": "assistant",
+            "content": "All products have sufficient stock."
+        }
+    ],
+    "summary": {
+        "summary": "Summary unavailable - the AI gave unreadable JSON twice.",
+        "topics": [],
+        "recommended_actions": []
+    }
+}

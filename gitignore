@@ -1,0 +1,13 @@
+# Environment files - NEVER commit your API key
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Runtime data (created when the tool runs)
+data/
+sessions/
+
+# Temporary save files
+*.tmp

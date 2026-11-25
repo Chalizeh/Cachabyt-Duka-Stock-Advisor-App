@@ -1,140 +1,85 @@
-# Cachabyt Duka Stock Advisor App
+# Cachabyt Duka Stock Advisor
 
-**IYF WeCan Academy – Season 12 Group Project**
+**WeCan Academy - Artificial Intelligence Course - Season 12 Group Project**
+Group members: **Charles_1016, Eclare_2545, Caleb_2528**
+Repo name: `wca-ai-tool-s12-cachabyt`
 
-A beginner-friendly Python application for Mahanaim Canteen. It helps the owner check stock, record sales, add deliveries and identify low-stock products. Students can check products and prices and submit advance-order requests.
+## What the tool does
 
-## Products and menu prices
+Cachabyt Duka Stock Advisor is a Python command-line tool for a school canteen in Kenya. It:
 
-| Product | Price (KSh) |
-|---|---:|
-| Samosa | 10 |
-| Smoki sausage | 40 |
-| Boiled egg | 30 |
-| Mandazi | 10 |
-| Chapati | 20 |
-| Smocha | 60 |
-| Tea | 20 |
-| Soda | 80 |
-| Biscuits | 10 |
-| Water | 50 |
+- Manages canteen **stock** (view, add products, receive stock, low-stock alerts).
+- Records **counter sales** and produces a **sales report** (counter sales + verified M-Pesa orders).
+- Lets **customers** place advance orders and submit M-Pesa transaction codes.
+- Lets the **owner** verify M-Pesa payments, send payment reminders, and track collection/delivery.
+- Runs an **AI Stock Advisor** conversation (Gemini API) that:
+  - remembers the whole session (full message history sent with **every** API call),
+  - requires the model to reply in **JSON** and checks every reply, **retrying once** on failure,
+  - makes a **final AI call** at the end of the session to summarise the conversation,
+  - **saves** the conversation and summary to a dated file in `sessions/`.
 
-Prices come from the supplied Mahanaim Canteen menu photo and the three requested additions. Starter quantities in `data/stock.json` are demonstration quantities, not verified real stock. Update them with the canteen owner before a live trial.
+## How to run
 
-## Features
+```bash
+pip install -r requirements.txt
+python cachabyt.py
+```
 
-- Current stock and price display
-- Owner records sales and deliveries
-- Low-stock alerts (default warning at 5 units or fewer)
-- Student advance-order requests with unique order numbers
-- Seller payment verification before order confirmation
-- Payment reminders for unpaid buyers
-- Ready-for-collection and collected order statuses
-- Stock deducted only after seller verifies payment
-- Local JSON memory for stock, orders and previous sessions
-- Optional Gemini AI conversation with full message history
-- JSON response validation and one retry
-- Final session summary saved to a dated JSON file
-- Menu to start a session, open an old session or exit
-- Local stock and price functions work without an API key
+Main menu:
+
+1. Start a new AI advisor session
+2. Open a past session file
+3. Customer self-service centre
+4. Duka owner/seller portal
+5. Exit application
+
+## How to set the API key
+
+1. Look for file named `.env`.
+2. Put your Gemini key in it:
+
+```
+GEMINI_API_KEY=your_real_key_here
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+The key is loaded with `python-dotenv` and is **never** written into the code.
+`.env` is listed in `.gitignore`, so it cannot be committed by accident.
 
 ## Requirements
 
-- Python 3.10 or newer
-- VS Code
-- Internet connection for Gemini AI features
-- Gemini API key (optional for local stock functions)
+See `requirements.txt`:
 
-## Setup in VS Code (Windows)
+- `google-genai` - Google Gemini API client
+- `python-dotenv` - loads the API key from `.env`
 
-1. Download and extract this project folder.
-2. Open VS Code.
-3. Select **File → Open Folder** and choose `Cachabyt Duka Stock Advisor App`.
-4. Open **Terminal → New Terminal**.
-5. Create a virtual environment:
+## Project layout
 
-   ```powershell
-   python -m venv .venv
-   ```
+```
+wca-ai-tool-s12-cachabyt/
+├── cachabyt.py   # the whole tool (17 numbered sections)
+├── requirements.txt
+├── .gitignore
+├── .env
+├── README.md
+├── samples/
+│   └── sample_session_2026-11-24.json   # a saved 4-turn test session
+├── data/                   # created at runtime (stock, orders, sales)
+└── sessions/               # created at runtime (saved AI sessions)
+```
 
-6. Activate it:
+## Sample session
 
-   ```powershell
-   .\.venv\Scripts\Activate.ps1
-   ```
+`samples/sample_session_2026-11-24.json` shows a real 4-turn test conversation
+where the advisor remembers an earlier turn (note how turn 4 uses the product
+asked about in turn 1). Copy it into `sessions/` to view it with menu option 2.
 
-   If PowerShell blocks activation, use Command Prompt terminal and run:
+## GitHub collaboration
 
-   ```cmd
-   .venv\Scripts\activate.bat
-   ```
+Every member has 3+ meaningful commits, e.g.:
 
-7. Install packages:
-
-   ```powershell
-   python -m pip install -r requirements.txt
-   ```
-
-8. Copy `.env.example` and rename the copy to `.env`.
-9. Paste your Gemini API key after `GEMINI_API_KEY=` in `.env`. Do not add quotes.
-10. Run the program:
-
-   ```powershell
-   python main.py
-   ```
-
-If no key is configured, local stock, price, order and session functions remain available. AI conversation features use Gemini when a valid key is present.
-
-## API key safety
-
-- Get a key from Google AI Studio: https://aistudio.google.com/app/apikey
-- Never buy a key from an unofficial reseller.
-- Never paste the key into `main.py`, screenshots, reports or GitHub.
-- `.env` is ignored by Git through `.gitignore`.
-- Do not commit `.env`; commit `.env.example` only.
-- Check current model access, rate limits and pricing on https://ai.google.dev/gemini-api/docs/pricing
-
-## How the local memory works
-
-The application stores:
-- Product names, prices and quantities in `data/stock.json`
-- Student order requests in `data/orders.json`
-- Conversations and summaries in `sessions/`
-
-This local memory does not need an API key. It remains available when the program is closed and opened again. The Gemini conversation memory is a separate list of messages; the full list is sent with each AI turn.
-
-## Important demo notes
-
-- Starter quantities are sample values. Agree actual quantities with the canteen owner.
-- Student orders start as **Awaiting payment** and are not confirmed until the seller verifies payment.
-- The seller must check the actual M-Pesa or approved payment account. A typed transaction reference alone is not proof of payment.
-- Stock is deducted when the seller verifies payment and confirms the order.
-- Unpaid buyers can receive a reminder message generated by the app. The seller must copy and send it manually; SMS/WhatsApp is not automated.
-- Paid orders can be marked **Ready for collection** and then **Collected**.
-- This prototype does not process payments, verify M-Pesa automatically or handle refunds.
-- This first version runs on one computer and local JSON files. Multiple users on different phones/computers will require a shared database and a web application in a later phase.
-
-## Suggested GitHub repository
-
-`wca-ai-tool-s12-[GroupName]`
-
-Add all three members as collaborators. Each member must make at least three meaningful commits. Example commit messages:
-- `Add canteen product catalogue and stock file`
-- `Build sale and restock functions`
-- `Add Gemini conversation history and JSON validation`
-- `Add student order request feature`
-- `Write project report and setup guide`
-
-## Project files
-
-- `main.py` – main Python application
-- `data/stock.json` – product prices and quantities
-- `data/orders.json` – student order requests
-- `prompts.md` – prompt design explanation
-- `requirements.txt` – Python packages
-- `.env.example` – safe API-key template
-- `.gitignore` – protects secret files
-- `sessions/` – dated conversation sessions
-- `samples/` – sample session for testing
-- `PROJECT_REPORT.docx` – editable project report
-- `GROUP_ROLES_AND_DEMO.md` – member responsibilities and demo plan
+- `Add message history to API call`
+- `Add JSON answer check with one retry`
+- `Add summary prompt and dated session save`
+- `Fix JSON check on empty reply`
+- `Add view past session menu option`

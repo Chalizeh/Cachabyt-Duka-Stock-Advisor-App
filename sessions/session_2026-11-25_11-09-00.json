@@ -1,0 +1,61 @@
+{
+    "tool": "Cachabyt Duka Stock Advisor",
+    "group": "Cachabyt (Charles_1016, Eclare_2545, Caleb_2528)",
+    "date": "2026-11-25_11-09-00",
+    "turns": 6,
+    "conversation": [
+        {
+            "role": "user",
+            "content": "what products have we sold most?"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "what products do you sell?"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "prices of smocha?"
+        },
+        {
+            "role": "assistant",
+            "content": "Samosa: KSh 10\nSmoki Sausage: KSh 40\nBoiled Egg: KSh 30\nMandazi: KSh 10\nChapati: KSh 20\nSmocha: KSh 60\nTea: KSh 20\nSoda: KSh 80\nBiscuits: KSh 10\nWater: KSh 50\nSweets: KSh 10.0"
+        },
+        {
+            "role": "user",
+            "content": "stock available?"
+        },
+        {
+            "role": "assistant",
+            "content": "Samosa: 400 available\nSmoki Sausage: 300 available\nBoiled Egg: 244 available\nMandazi: 496 available\nChapati: 322 available\nSmocha: 158 available\nTea: 387 available\nSoda: 243 available\nBiscuits: 500 available\nWater: 304 available\nSweets: 400 available"
+        },
+        {
+            "role": "user",
+            "content": "need restock?"
+        },
+        {
+            "role": "assistant",
+            "content": "All products have sufficient stock."
+        },
+        {
+            "role": "user",
+            "content": "6"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        }
+    ],
+    "summary": {
+        "summary": "Summary unavailable - the AI gave unreadable JSON twice.",
+        "topics": [],
+        "recommended_actions": []
+    }
+}
