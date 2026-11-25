@@ -39,7 +39,7 @@ Main menu:
 2. Put your Gemini key in it:
 
 ```
-GEMINI_API_KEY=your_real_key_here
+GEMINI_API_KEY= Insert your_real_key_here
 GEMINI_MODEL=gemini-2.5-flash
 ```
 
