@@ -1,0 +1,29 @@
+{
+    "tool": "Cachabyt Duka Stock Advisor",
+    "group": "Cachabyt (Charles_1016, Eclare_2545, Caleb_2528)",
+    "date": "2026-11-27_23-33-31",
+    "turns": 2,
+    "conversation": [
+        {
+            "role": "user",
+            "content": "what products are you selling??"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "price of soda?"
+        },
+        {
+            "role": "assistant",
+            "content": "Samosa: KSh 10\nSmoki Sausage: KSh 40\nBoiled Egg: KSh 30\nMandazi: KSh 10\nChapati: KSh 20\nSmocha: KSh 60\nTea: KSh 20\nSoda: KSh 80\nBiscuits: KSh 10\nWater: KSh 50\nSweets: KSh 10.0"
+        }
+    ],
+    "summary": {
+        "summary": "Summary unavailable - the AI gave unreadable JSON twice.",
+        "topics": [],
+        "recommended_actions": []
+    }
+}
