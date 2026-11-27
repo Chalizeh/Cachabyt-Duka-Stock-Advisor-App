@@ -38,10 +38,8 @@ Main menu:
 1. Look for file named `.env`.
 2. Put your Gemini key in it:
 
-```
-GEMINI_API_KEY= Insert your_real_key_here
-GEMINI_MODEL=gemini-2.5-flash
-```
+```anthropic apikey="api key here"
+``` ANTHROPIC_MODEL=claude-sonnet-5
 
 The key is loaded with `python-dotenv` and is **never** written into the code.
 `.env` is listed in `.gitignore`, so it cannot be committed by accident.
