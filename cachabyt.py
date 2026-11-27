@@ -12,7 +12,7 @@ import os                                         # Reads environment variables 
 from pathlib import Path                          # Creates and manages file paths in a safe way.
 from datetime import datetime                     # Records transaction dates and session times.
 
-from dotenv import load_dotenv                    # Loads the Gemini API key from a hidden .env file.
+from dotenv import load_dotenv  # Loads API credentials from the .env file.
 
 try:                                              # Checks whether the Gemini package is installed.
     from google import genai                      # Imports the Gemini AI client library.
