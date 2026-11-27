@@ -1,0 +1,21 @@
+{
+    "tool": "Cachabyt Duka Stock Advisor",
+    "group": "Cachabyt (Charles_1016, Eclare_2545, Caleb_2528)",
+    "date": "2026-11-27_23-42-20",
+    "turns": 1,
+    "conversation": [
+        {
+            "role": "user",
+            "content": "Who is ruto?"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        }
+    ],
+    "summary": {
+        "summary": "Summary unavailable - the AI gave unreadable JSON twice.",
+        "topics": [],
+        "recommended_actions": []
+    }
+}
