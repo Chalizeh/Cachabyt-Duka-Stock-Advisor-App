@@ -12,12 +12,12 @@ import os                                         # Reads environment variables 
 from pathlib import Path                          # Creates and manages file paths in a safe way.
 from datetime import datetime                     # Records transaction dates and session times.
 
-from dotenv import load_dotenv  # Loads API credentials from the .env file.
+from dotenv import load_dotenv                    # Loads the Anthropic API key from a hidden .env file.
 
-try:                                              # Checks whether the Gemini package is installed.
-    from google import genai                      # Imports the Gemini AI client library.
+try:                                              # Checks whether the Anthropic package is installed.
+    from anthropic import Anthropic               # Imports the Anthropic Claude client library.
 except ImportError:                               # Runs when the package is unavailable on this machine.
-    genai = None                                  # Allows the application to run using a local fallback.
+    Anthropic = None                              # Allows the application to run using a local fallback.
 
 
 # ============================================================
@@ -672,7 +672,7 @@ def update_order_status():                        # Allows the owner to update o
 
 # ============================================================
 # 13. AI STOCK ADVISOR - CONVERSATION WITH MEMORY
-# Purpose: Hold a conversation of at least 4 turns with Gemini.
+# Purpose: Hold a conversation of at least 4 turns with Anthropic Claude.
 # The FULL message list is stored and sent with EVERY API call,
 # so each answer uses what was said earlier. The model must reply
 # in JSON; every reply is parsed and checked, retried once on
@@ -683,19 +683,19 @@ def update_order_status():                        # Allows the owner to update o
 # ============================================================
 
 load_dotenv()                                     # Loads environment variables from the hidden .env file.
-API_KEY = os.getenv("GEMINI_API_KEY")             # Reads the Gemini API key (never hard-coded).
-MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")  # Reads the model name, with a safe default.
+API_KEY = os.getenv("ANTHROPIC_API_KEY")           # Reads the Anthropic API key (never hard-coded).
+MODEL_NAME = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")  # Reads the model name, with a safe default.
 
-ai_client = None                                  # Starts with no active Gemini connection.
+ai_client = None                                  # Starts with no active Anthropic connection.
 
-if genai and API_KEY:                             # Checks whether Gemini and its API key are available.
-    try:                                          # Attempts to connect to Gemini.
-        ai_client = genai.Client(api_key=API_KEY)  # Creates the Gemini client.
-        print("Gemini AI is connected.")          # Confirms successful connection.
+if Anthropic and API_KEY:                         # Checks whether Anthropic and its API key are available.
+    try:                                          # Attempts to connect to Anthropic Claude.
+        ai_client = Anthropic(api_key=API_KEY)     # Creates the Anthropic client.
+        print("Anthropic Claude AI is connected.")  # Confirms successful connection.
     except Exception as error:                    # Handles connection errors.
-        print("Gemini connection failed:", error)  # Displays the connection problem.
+        print("Anthropic connection failed:", error)  # Displays the connection problem.
 elif not API_KEY:                                 # Checks whether the key is missing.
-    print("No GEMINI_API_KEY found in .env - the AI advisor will use local answers.")  # Warns the user.
+    print("No ANTHROPIC_API_KEY found in .env - the AI advisor will use local answers.")  # Warns the user.
 
 
 # --- 13A. R-T-C-C-O PROMPTS (documented in report section 04) ---
@@ -723,7 +723,7 @@ REQUIRED_SUMMARY_FIELDS = ["summary", "topics", "recommended_actions"]  # Lists 
 MAX_ATTEMPTS = 2                                  # Allows the first try plus exactly one retry.
 
 
-def local_ai_answer(question):                    # Provides basic AI-style answers without Gemini.
+def local_ai_answer(question):                    # Provides basic AI-style answers without Anthropic Claude.
     question = question.lower()                   # Standardises the question.
 
     if "low stock" in question or "restock" in question:  # Checks for restocking questions.
@@ -803,34 +803,39 @@ def fields_present(data, required_fields):        # Checks that all required JSO
     return True                                   # All required fields are present and not empty.
 
 
-def call_gemini(messages):                        # Sends the FULL message list to Gemini and returns raw text.
+def call_anthropic(messages):                     # Sends the FULL message list to Anthropic Claude and returns raw text.
     system_text = next(                           # Finds the system instruction inside the message list.
         (m["content"] for m in messages if m["role"] == "system"),  # Searches for the system message.
         ""                                        # Uses an empty string if no system message exists.
     )
-    contents = [                                  # Builds the conversation for the Gemini API.
-        {"role": m["role"], "parts": [{"text": m["content"]}]}  # Converts each message to Gemini's format.
+    contents = [                                  # Builds the conversation for the Anthropic Messages API.
+        {"role": m["role"], "content": m["content"]}  # Converts each message to Anthropic's format.
         for m in messages                         # Goes through every stored message.
         if m["role"] != "system"                   # Skips the system message because it is sent separately.
     ]
-    response = ai_client.models.generate_content(  # Sends the whole conversation to the API.
-        model=MODEL_NAME,                         # Selects the Gemini model from settings.
-        contents=contents,                        # Sends the full message history for memory.
-        config={"system_instruction": system_text}  # Attaches the system instruction.
+    response = ai_client.messages.create(          # Sends the whole conversation to the Anthropic API.
+        model=MODEL_NAME,                         # Selects the Claude model from settings.
+        max_tokens=1200,                          # Sets the maximum number of generated tokens.
+        system=system_text,                       # Attaches the system instruction separately.
+        messages=contents                         # Sends the full conversation history for memory.
     )
-    return response.text                          # Returns the raw text of the AI's reply.
+    return "".join(                               # Combines all text blocks in the response.
+        block.text                                # Extracts the text from one response block.
+        for block in response.content             # Goes through every returned content block.
+        if block.type == "text"                   # Skips any non-text response blocks.
+    )
 
 
 def get_checked_reply(messages, required_fields):  # Calls the AI and validates the JSON reply, retrying once.
     for attempt in range(MAX_ATTEMPTS):           # Tries the call, then retries once on failure.
         data = None                               # Starts each attempt with no parsed reply.
 
-        if ai_client is None:                     # Checks whether Gemini is connected.
+        if ai_client is None:                     # Checks whether Anthropic Claude is connected.
             question = messages[-1]["content"]    # Takes the latest user question from the history.
             data = {"answer": local_ai_answer(question)}  # Builds a valid JSON-shaped local fallback reply.
-        else:                                     # Runs when Gemini is available.
+        else:                                     # Runs when Anthropic Claude is available.
             try:                                  # Attempts the API call.
-                raw_text = call_gemini(messages)  # Sends the full history and receives raw text.
+                raw_text = call_anthropic(messages)  # Sends the full history and receives raw text.
             except Exception as error:            # Handles failed API calls such as no internet.
                 print("AI service unavailable:", error)  # Informs the user of the connection problem.
                 question = messages[-1]["content"]  # Takes the latest user question from the history.
