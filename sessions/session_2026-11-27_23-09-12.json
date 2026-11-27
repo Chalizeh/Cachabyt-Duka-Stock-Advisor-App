@@ -1,0 +1,53 @@
+{
+    "tool": "Cachabyt Duka Stock Advisor",
+    "group": "Cachabyt (Charles_1016, Eclare_2545, Caleb_2528)",
+    "date": "2026-11-27_23-09-12",
+    "turns": 5,
+    "conversation": [
+        {
+            "role": "user",
+            "content": "3"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "1"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "How much is soda?"
+        },
+        {
+            "role": "assistant",
+            "content": "Soda costs KSh 80 and 243 units are available."
+        },
+        {
+            "role": "user",
+            "content": "What about delmonte?"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "4"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        }
+    ],
+    "summary": {
+        "summary": "Summary unavailable - the AI gave unreadable JSON twice.",
+        "topics": [],
+        "recommended_actions": []
+    }
+}
