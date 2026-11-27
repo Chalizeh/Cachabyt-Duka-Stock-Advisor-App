@@ -1,0 +1,29 @@
+{
+    "tool": "Cachabyt Duka Stock Advisor",
+    "group": "Cachabyt (Charles_1016, Eclare_2545, Caleb_2528)",
+    "date": "2026-11-27_23-41-03",
+    "turns": 2,
+    "conversation": [
+        {
+            "role": "user",
+            "content": "What products do you sell?"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        },
+        {
+            "role": "user",
+            "content": "5"
+        },
+        {
+            "role": "assistant",
+            "content": "I can help with stock, prices, product availability and restocking."
+        }
+    ],
+    "summary": {
+        "summary": "Summary unavailable - the AI gave unreadable JSON twice.",
+        "topics": [],
+        "recommended_actions": []
+    }
+}
