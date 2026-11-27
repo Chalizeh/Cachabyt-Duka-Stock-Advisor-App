@@ -51,7 +51,7 @@ PAYMENT_METHODS = ["M-Pesa Till", "M-Pesa Paybill"]  # Payment methods offered t
 
 STARTER_STOCK = {                                 # Stores the initial canteen products.
     "samosa": {"price": 10, "quantity": 400},      # Samosa price and available quantity.
-    "smoki sausage": {"price": 40, "quantity": 300},  # Smoki sausage details.
+    "smokie sausage": {"price": 40, "quantity": 300},  # Smoki sausage details.
     "boiled egg": {"price": 30, "quantity": 250},  # Boiled egg details.
     "mandazi": {"price": 10, "quantity": 500},     # Mandazi details.
     "chapati": {"price": 20, "quantity": 350},     # Chapati details.
