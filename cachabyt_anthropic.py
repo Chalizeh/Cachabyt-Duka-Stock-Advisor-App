@@ -1,6 +1,6 @@
 # ============================================================
 # CACHABYT DUKA STOCK ADVISOR
-# WeCan Academy Season 12 - Group Project (60 marks)
+# WeCan Academy Season 12 - Cachabyt Group Project
 # Group members: Charles_1016, Eclare_2545 and Caleb_2528
 # Purpose: Manage canteen stock, sales and student orders, with
 #          an AI advisor that holds a conversation WITH MEMORY,
